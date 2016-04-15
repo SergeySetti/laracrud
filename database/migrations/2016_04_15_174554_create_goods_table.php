@@ -15,7 +15,6 @@ class CreateGoodsTable extends Migration
         Schema::create('goods', function(Blueprint $table) {
             $table->increments('id');
             $table->integer('advert_id')->unsigned();
-            $table->foreign('advert_id')->references('id')->on('adverts');
             $table->string('good_name');
             $table->float('good_price');
             $table->timestamps();
