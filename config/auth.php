@@ -15,7 +15,7 @@ return [
 
     'defaults' => [
         'guard' => 'web',
-        'passwords' => 'users',
+        'passwords' => 'adverts',
     ],
 
     /*
@@ -38,12 +38,12 @@ return [
     'guards' => [
         'web' => [
             'driver' => 'session',
-            'provider' => 'users',
+            'provider' => 'adverts',
         ],
 
         'api' => [
             'driver' => 'token',
-            'provider' => 'users',
+            'provider' => 'adverts',
         ],
     ],
 
@@ -65,9 +65,9 @@ return [
     */
 
     'providers' => [
-        'users' => [
+        'adverts' => [
             'driver' => 'eloquent',
-            'model' => App\User::class,
+            'model' => App\Advert::class,
         ],
 
         // 'users' => [
@@ -96,8 +96,8 @@ return [
     */
 
     'passwords' => [
-        'users' => [
-            'provider' => 'users',
+        'adverts' => [
+            'provider' => 'adverts',
             'email' => 'auth.emails.password',
             'table' => 'password_resets',
             'expire' => 60,
