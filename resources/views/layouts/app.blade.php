@@ -12,7 +12,9 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel='stylesheet' type='text/css'>
 
     <!-- Styles -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/bootstrap-theme.css" rel="stylesheet">
+    <link href="/css/styles.css" rel="stylesheet">
 
     <style>
         body {
@@ -71,10 +73,16 @@
         </div>
     </nav>
 
+    <div class="container">
     @yield('content')
+    </div>
 
     <!-- JavaScripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="/js/jquery-2.2.3.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="/js/tablesort.js"></script>
+    <script src='/js/sorts/tablesort.number.js'></script>
+    <script src='/js/sorts/tablesort.date.js'></script>
+    <script src='/js/site.js'></script>
 </body>
 </html>
