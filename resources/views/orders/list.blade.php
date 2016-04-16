@@ -20,7 +20,7 @@
                     <td>{{$order->order_client_name}}</td>
                     <td>{{$order->order_client_phone}}</td>
                     <td data-sort-method='date'>
-                        <a href="/good/{{$order->good->id}}">{{$order->good->good_name}}</a><br>
+                        <a href="{{action('GoodController@edit', ['id' => $order->good->id])}}">{{$order->good->good_name}}</a><br>
                         {{$order->good->advert->user_first_name}} {{$order->good->advert->user_last_name}}
                         ({{$order->good->advert->email}})
                     </td>
@@ -31,7 +31,7 @@
             @endforeach
             </tbody>
         </table>
-        {{--{!! $orders->links() !!}--}}
         {!! $orders->appends(Request::all())->render() !!}
     </div>
 </div>
+<script>var tablesort = new Tablesort(document.getElementById('table-sortable'));</script>

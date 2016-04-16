@@ -6,6 +6,16 @@
     margin-top: 20px;
 }
 
+.errors-here {
+    color: darkred;
+    list-style: none;
+}
+
+.success-here {
+    color: darkgreen;
+    list-style: none;
+}
+
 th.sort-header::-moz-selection { background:transparent; }
 th.sort-header::selection      { background:transparent; }
 th.sort-header {

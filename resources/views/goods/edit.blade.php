@@ -1,11 +1,15 @@
 @extends('layouts.app')
 @section('content')
     <div class="row">
-        <form class="form">
+        <ul class="errors-here">
+        </ul>
+        <ul class="success-here">
+        </ul>
+        <form class="form good-edit-form" action="{{action('GoodController@store')}}" method="post">
             <div class="col-lg-6 col-md-6 col-sm-6">
                 <div class="form-group">
                     <label for="limit">ID</label>
-                    <input type="text" name="good_id" disabled="disabled" value="{{$good->id}}" class="form-control">
+                    <input type="text" name="good_id" readonly="readonly" value="{{$good->id}}" class="form-control">
                 </div>
                 <div class="form-group">
                     <label for="advert_id">Рекламодатель</label>

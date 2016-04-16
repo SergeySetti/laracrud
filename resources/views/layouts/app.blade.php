@@ -50,6 +50,8 @@
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
                     <li><a href="{{ url('/home') }}">Главная</a></li>
+                    <li><a href="{{ url('/good') }}">Товары</a></li>
+                    <li><a href="{{ url('/order') }}">Заказы</a></li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->

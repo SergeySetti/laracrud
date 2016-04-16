@@ -21,11 +21,23 @@ Route::get('/home', 'HomeController@index');
 
 Route::group(['middleware' => ['auth']], function () {
     Route::resource('order', 'OrderController');
-    Route::resource('good', 'GoodController');
+    
+    Route::group(['middleware' => ['filters.ordersfilter']], function () {
+        Route::post('order', [
+            'middleware' => 'filters.ordersfilter', 
+            'uses' => 'OrderController@filter',
+        ]);
+        Route::get('order', [
+            'middleware' => 'filters.ordersfilter', 
+            'uses' => 'OrderController@index',
+        ]);
+    });
 
-    Route::post('order', [
-        'middleware' => 'filters.ordersfilter', 
-        'uses' => 'OrderController@filter',
-    ]);
+    Route::group(['middleware' => ['filters.goodsfilter']], function () {
+        Route::resource('good', 'GoodController');
+        Route::post('/good/store', [
+            'uses' => 'GoodController@store',
+        ]);
+    });
     
 });
