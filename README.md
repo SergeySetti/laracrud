@@ -1,27 +1,29 @@
-# Laravel PHP Framework
+# Simple Laravel CRUD application
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+Существует два типа установки: 
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+1. Из архива
+2. Из репозитория 
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+### Установка из архива
 
-## Official Documentation
+[Скачиваем файлы проекта](https://dl.dropboxusercontent.com/u/8002990/laracrud.rar)
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+Далее производим следующие операции: 
 
-## Contributing
+1. Сконфигурирувать пустой web-хост на локальной машине
+2. Извлечь файлы архива в папку хоста
+3. Создать пустую базу данных
+4. Импортировать данные в базу из файла `dump.sql`, который находится в корневой папке
+5. Настроить соединение с базой в файле `.env`, который находится в корневой папке
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+### Установка из репозитория
 
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+1. Клонируем https://github.com/SergeySetti/laracrud.git 
+2. Настраиваем виртуальных хост на склонированную папку
+3. В консоли в папке по очереди выполняем команды:
+    1. `composer install` - установка зависимостей
+    2. `php artisan migrate` - развертывание структуры базы данных
+    2. `php artisan db:seed` - заполнение базы данных
+    
+В случае сложностей, пишем в Skype: `settibiz`
