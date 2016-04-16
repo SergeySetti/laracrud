@@ -36,6 +36,7 @@ class Order extends Model
         'good_id',
         'order_client_phone',
         'order_client_name',
+        'created_at',
     ];
 
     public function good()

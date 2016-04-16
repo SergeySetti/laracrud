@@ -107,6 +107,7 @@ class AppSeeder extends Seeder
         /** @var Order $orderJohn */
         $orderJohn->state()->associate($stateNew);
         $orderJohn->good()->associate($goodRado);
+        $orderJohn->created_at->addDay();
         $orderJohn->save();
 
         $orderMichel = Order::firstOrCreate([
@@ -116,6 +117,7 @@ class AppSeeder extends Seeder
         /** @var Order $orderMichel */
         $orderMichel->state()->associate($stateOnoperator);
         $orderMichel->good()->associate($goodSwiss);
+        $orderMichel->created_at->addDays(2);
         $orderMichel->save();
 
         $orderDarrel = Order::firstOrCreate([
@@ -125,6 +127,7 @@ class AppSeeder extends Seeder
         /** @var Order $orderDarrel */
         $orderDarrel->state()->associate($stateAccepted);
         $orderDarrel->good()->associate($goodTablet);
+        $orderDarrel->created_at->addDays(5);
         $orderDarrel->save();
 
         $orderDan = Order::firstOrCreate([
@@ -135,6 +138,22 @@ class AppSeeder extends Seeder
         $orderDan->state()->associate($stateAccepted);
         $orderDan->good()->associate($goodMonster);
         $orderDan->save();
+
+        DB::table("orders")->where('id', $orderDan->id)->update([
+            'created_at' => \Carbon\Carbon::now()->subDays(5)
+        ]);
+        
+        DB::table("orders")->where('id', $orderJohn->id)->update([
+            'created_at' => \Carbon\Carbon::now()->subDays(10)
+        ]);
+        
+        DB::table("orders")->where('id', $orderMichel->id)->update([
+            'created_at' => \Carbon\Carbon::now()->subMonth(10)
+        ]);
+        
+        DB::table("orders")->where('id', $orderDarrel)->update([
+            'created_at' => \Carbon\Carbon::now()->subYears(3)
+        ]);
         
 
     }

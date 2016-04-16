@@ -18,8 +18,9 @@ class CreateOrdersTable extends Migration
             $table->integer('good_id')->unsigned();
             $table->string('order_client_phone');
             $table->string('order_client_name');
-            
-            $table->timestamps();
+
+            $table->timestamp('created_at');
+            $table->timestamp('updated_at');
         });
     }
 

@@ -14,6 +14,7 @@
     <!-- Styles -->
     <link href="/css/bootstrap.css" rel="stylesheet">
     <link href="/css/bootstrap-theme.css" rel="stylesheet">
+    <link href="/css/bootstrap-datepicker.min.css" rel="stylesheet">
     <link href="/css/styles.css" rel="stylesheet">
 
     <style>
@@ -83,6 +84,7 @@
     <script src="/js/tablesort.js"></script>
     <script src='/js/sorts/tablesort.number.js'></script>
     <script src='/js/sorts/tablesort.date.js'></script>
+    <script src='/js/bootstrap-datepicker.min.js'></script>
     <script src='/js/site.js'></script>
 </body>
 </html>

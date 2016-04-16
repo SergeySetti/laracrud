@@ -19,4 +19,13 @@ Route::auth();
 
 Route::get('/home', 'HomeController@index');
 
-Route::resource('order', 'OrderController');
+Route::group(['middleware' => ['auth']], function () {
+    Route::resource('order', 'OrderController');
+    Route::resource('good', 'GoodController');
+
+    Route::post('order', [
+        'middleware' => 'filters.ordersfilter', 
+        'uses' => 'OrderController@filter',
+    ]);
+    
+});
